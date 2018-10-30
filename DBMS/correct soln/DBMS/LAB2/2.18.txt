@@ -1,0 +1,13 @@
+18.
+
+SQL> SELECT DEPT_CODE, COUNT(DEPT_NAME)
+  2  FROM DEPARTMENT_MASTER
+  3  GROUP BY DEPT_CODE;
+
+ DEPT_CODE COUNT(DEPT_NAME)
+---------- ----------------
+        10                1
+        20                1
+        30                1
+        40                1
+        50                1

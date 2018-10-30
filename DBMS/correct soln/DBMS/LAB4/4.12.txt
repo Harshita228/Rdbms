@@ -1,0 +1,5 @@
+12.
+
+SQL> alter table customer_table drop column e_mail;
+
+Table altered.

@@ -1,0 +1,242 @@
+1.
+
+SQL> CREATE TABLE CUSTOMER_TABLE(
+  2  CUSTOMERID NUMBER(5),
+  3  CUSTOMERNAME NUMBER(10),
+  4  ADDRESS1 VARCHAR2(30),
+  5  ADDRESS2 VARCHAR2(30)
+  6  );
+
+Table created.
+**************************************************************************************************************
+2..\
+
+SQL> ALTER TABLE CUSTOMER_TABLE
+  2  MODIFY(CUSTOMERNAME VARCHAR2(30) NOT NULL);
+
+Table altered.
+
+SQL> DESC CUSTOMER_TABLE;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ CUSTOMERID                                         NUMBER(5)
+ CUSTOMERNAME                              NOT NULL VARCHAR2(30)
+ ADDRESS1                                           VARCHAR2(30)
+ ADDRESS2                                           VARCHAR2(30)
+**************************************************************************************************************
+3..
+
+SQL> ALTER TABLE CUSTOMER_TABLE
+  2  ADD(GENDER VARCHAR2(1),AGE NUMBER(3),PHONENO NUMBER(10));
+
+Table altered.
+
+SQL> DESC CUSTOMER_TABLE;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ---------------------------
+
+ CUSTOMERID                                         NUMBER(5)
+ CUSTOMERNAME                              NOT NULL VARCHAR2(30)
+ ADDRESS1                                           VARCHAR2(30)
+ ADDRESS2                                           VARCHAR2(30)
+ GENDER                                             VARCHAR2(1)
+ AGE                                                NUMBER(3)
+ PHONENO                                            NUMBER(10)
+****************************************************************************************************************
+4.
+SQL> SELECT * FROM CUSTOMER_TABLE;
+
+CUSTOMERID CUSTOMERNAME                   ADDRESS1
+---------- ------------------------------ ------------------------------
+ADDRESS2                       G        AGE    PHONENO
+------------------------------ - ---------- ----------
+      1000 ALLEN                          #115 CHICAGO
+#115 CHICAGO                   M         25    7878776
+
+      1001 GEORGE                         #116 FRANCE 
+#116 FRANCE                    M         25     434524
+
+      1002 BECKER                         #114 NEWYORK
+#114 NEWYORK                   M         45     431525
+*****************************************************************************************************************
+6.
+
+
+SQL> INSERT INTO CUSTOMER_TABLE
+  2  VALUES(1002,'john','#114 chicago','#114 chicago','m',45,439525);
+INSERT INTO CUSTOMER_TABLE
+*
+ERROR at line 1:
+ORA-00001: unique constraint (TRG1110.CUSTID_PRIM) violated
+*****************************************************************************************************************
+7.
+  2
+SQL> ALTER TABLE CUSTOMER_TABLE DISABLE CONSTRAINT CUSTID_PRIM;
+
+Table altered.
+
+SQL> INSERT INTO CUSTOMER_TABLE
+  2  VALUES(1002,'BECKER','#114 NEW YORK','#114 NEW YORK','M',45,431525);
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMER_TABLE
+  2  VALUES(1003,'NANAPATEKAR','#11 INDIA','#115 INDIA','M',45,431525);
+
+1 row created.
+
+SQL> SELECT * FROM CUSTOMER_TABLE;
+
+CUSTOMERID CUSTOMERNAME                   ADDRESS1
+---------- ------------------------------ ------------------------------
+ADDRESS2                       G        AGE    PHONENO
+------------------------------ - ---------- ----------
+      1000 ALLEN                          #115 CHICAGO
+#115 CHICAGO                   M         25    7878776
+
+      1001 GEORGE                         #116 FRANCE
+#116 FRANCE                    M         25     434524
+
+      1002 BECKER                         #114 NEWYORK
+#114 NEWYORK                   M         45     431525
+
+
+CUSTOMERID CUSTOMERNAME                   ADDRESS1
+---------- ------------------------------ ------------------------------
+ADDRESS2                       G        AGE    PHONENO
+------------------------------ - ---------- ----------
+      1002 BECKER                         #114 NEW YORK
+#114 NEW YORK                  M         45     431525
+
+      1003 NANAPATEKAR                    #11 INDIA
+#115 INDIA                     M         45     431525
+
+***************************************************************************************************************
+8.
+
+SQL> ALTER TABLE CUSTOMER_TABLE ENABLE CONSTRAINT CUSTID_PRIM;
+
+Table altered.
+*****************************************************************************************************************
+9.
+SQL> ALTER TABLE CUSTOMER_TABLE
+  2  DROP CONSTRAINT CUSTID_PRIM;
+
+Table altered.
+
+SQL> update customer_table
+  2  set salary=15000.50
+  3  where customerid=1002;
+
+1 row updated.
+
+SQL> update customer_table
+  2  set salary=20000.50
+  3  where customerid=1003;
+
+1 row updated.
+******************************************************************************************************************
+10.
+
+SQL> truncate table customer_table;              
+
+Table truncated.
+
+SQL> select * from customer_table;
+
+no rows selected
+*****************************************************************************************************************
+11.
+SQL> alter table customer_table
+  2  add(e_mail varchar2(30));
+
+Table altered.
+***************************************************************************************************************
+12.
+
+SQL> alter table customer_table drop column e_mail;
+
+Table altered.
+***************************************************************************************************************
+13.
+
+SQL> alter table customer_table
+  2  add(emailid  varchar2(30));
+
+Table altered.
+*************************************************************************************************************
+14.
+
+SQL> alter table customer_table set unused column emailid;
+
+Table altered.
+***************************************************************************************************************
+15.
+
+SQL> alter table customer_table drop unused columns;
+
+Table altered.
+
+SQL> desc customer_table;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ------------------------
+
+ CUSTOMERID                                         NUMBER(5)
+ CUSTOMERNAME                              NOT NULL VARCHAR2(30)
+ ADDRESS1                                           VARCHAR2(30)
+ ADDRESS2                                           VARCHAR2(30)
+ GENDER                                             VARCHAR2(1)
+ AGE                                                NUMBER(3)
+ PHONENO                                            NUMBER(10)
+ SALARY                                             NUMBER(7,2)
+****************************************************************************************************************
+16.
+
+SQL> UPDATE USER_TAB_COMMENTS
+  2  SET COMMENTS='CUSTOMER DETAILS'
+  3  WHERE TABLE_NAME='CUSTOMER_TABLE';
+UPDATE USER_TAB_COMMENTS
+       *
+ERROR at line 1:
+ORA-01031: insufficient privileges
+************************************************************************************************************
+17.
+
+SQL> SELECT * FROM USER_TAB_COMMENTS
+  2  WHERE TABLE_NAME='CUSTOMER_TABLE';
+
+TABLE_NAME                     TABLE_TYPE
+------------------------------ -----------
+COMMENTS
+--------------------------------------------------------------------------------
+
+CUSTOMER_TABLE                 TABLE
+
+***********************************************************************************************************
+18.
+
+SQL> UPDATE USER_COL_COMMENTS
+  2  SET COMMENTS='PERSONAL CONTACT NO'
+  3  WHERE COLUMN_NAME='PHONE NO';
+UPDATE USER_COL_COMMENTS
+       *
+ERROR at line 1:
+ORA-01031: insufficient privileges
+*********************************************************************************************************
+19.
+
+SQL> SELECT * FROM USER_COL_COMMENTS
+  2  WHERE COLUMN_NAME='PHONE NO';
+
+no rows selected
+*********************************************************************************************************
+20.
+
+SQL> CREATE TABLE SUPPLIERS AS
+  2  SELECT CUSTOMERID AS SUPPID,CUSTOMERNAME AS SNAME,
+  3  ADDRESS1 AS ADDR1,ADDRESS2 AS ADDR2,PHONENO AS CONTACTNO
+  4  FROM CUSTOMER_TABLE;
+
+Table created.
+

@@ -1,0 +1,26 @@
+1.
+SQL> CREATE TABLE EMPLOYEE_TABLE(
+  2  EMPNO NUMBER(4) NOT NULL,
+  3  ENAME VARCHAR2(10),
+  4  JOB VARCHAR2(50),
+  5  MGR NUMBER(4),
+  6  HIREDATE DATE,
+  7  SAL NUMBER(7,2),
+  8  COMM NUMBER(7,2),
+  9  DEPTNO NUMBER(2)
+ 10  );
+
+Table created.
+
+SQL> DESC EMPLOYEE_TABLE;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ EMPNO                                     NOT NULL NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(50)
+ MGR                                                NUMBER(4)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,2)
+ COMM                                               NUMBER(7,2)
+ DEPTNO                                             NUMBER(2)

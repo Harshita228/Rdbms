@@ -1,0 +1,13 @@
+12.
+	
+SQL> SELECT STAFF_NAME , DEPT_CODE ,STAFF_DOB
+  2  FROM STAFF_MASTER
+  3  WHERE STAFF_DOB BETWEEN '22-JAN-80' AND '31-MAR-83'
+  4  ORDER BY STAFF_DOB ASC;
+
+STAFF_NAME                                          DEPT_CODE STAFF_DOB
+-------------------------------------------------- ---------- ---------
+Allen                                                      30 22-JAN-80
+Shyam                                                      20 18-FEB-80
+Mohan                                                      10 23-MAR-80
+Raviraj                                                    40 17-JUN-80

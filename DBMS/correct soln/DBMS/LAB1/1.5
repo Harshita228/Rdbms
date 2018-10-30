@@ -1,0 +1,9 @@
+5.
+
+
+SQL> select staff_code , staff_name , dept_code,extract(year from sysdate)-extra
+ct(year from hiredate)
+  2  from staff_master , dual
+  3  where (extract(year from sysdate)-extract(year from hiredate)) > 18;
+
+no rows selected

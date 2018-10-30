@@ -1,0 +1,18 @@
+4.
+
+SQL> SELECT STAFF_NAME FROM STAFF_MASTER
+  2  WHERE STAFF_NAME LIKE '_n%' OR STAFF_NAME LIKE '__n%' OR STAFF_NAME LIKE'%n
+' OR STAFF_NAME LIKE '&s'
+  3  ORDER BY STAFF_NAME;
+Enter value for s:
+old   2: WHERE STAFF_NAME LIKE '_n%' OR STAFF_NAME LIKE '__n%' OR STAFF_NAME LIK
+E'%n' OR STAFF_NAME LIKE '&s'
+new   2: WHERE STAFF_NAME LIKE '_n%' OR STAFF_NAME LIKE '__n%' OR STAFF_NAME LIK
+E'%n' OR STAFF_NAME LIKE ''
+
+STAFF_NAME
+--------------------------------------------------
+Allen
+Anil
+John
+Mohan

@@ -1,0 +1,19 @@
+13.
+
+SQL> SELECT  STAFF_NAME,HIREDATE,TO_CHAR(HIREDATE,'DAY') FROM STAFF_MASTER ORDER
+ BY 3 ASC;
+
+STAFF_NAME                                         HIREDATE  TO_CHAR(H
+-------------------------------------------------- --------- ---------
+Allen                                              23-APR-01 MONDAY
+Raviraj                                            11-JAN-03 SATURDAY
+Mohan                                              19-JAN-02 SATURDAY
+Anil                                               11-MAR-01 SUNDAY
+Shyam                                              17-FEB-02 SUNDAY
+John                                               21-JAN-01 SUNDAY
+Rahul                                              11-DEC-03 THURSDAY
+Ram                                                17-JAN-02 THURSDAY
+Smith                                              12-MAR-02 TUESDAY
+Arvind                                             15-JAN-03 WEDNESDAY
+
+10 rows selected.

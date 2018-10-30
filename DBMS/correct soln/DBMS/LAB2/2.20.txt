@@ -1,0 +1,13 @@
+
+SQL> select mgr_code,min(staff_sal)
+  2  from staff_master
+  3  where mgr_code is not null
+  4  group by mgr_code
+  5  having min(staff_sal) > 10000
+  6  order by min(staff_sal) desc;
+
+  MGR_CODE MIN(STAFF_SAL)
+---------- --------------
+    100005          42000
+    100007          20000
+    100006          17000

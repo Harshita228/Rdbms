@@ -1,0 +1,11 @@
+12.
+
+SQL> SELECT STAFF_NAME FROM STAFF_MASTER WHERE TO_CHAR(HIREDATE,'DD')<=15;
+
+STAFF_NAME
+--------------------------------------------------
+Arvind
+Anil
+Smith
+Raviraj
+Rahul

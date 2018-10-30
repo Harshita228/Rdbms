@@ -1,0 +1,15 @@
+17.
+
+SQL> SELECT DEPT_CODE,ROUND(MAX(STAFF_SAL),0)"MAXIMUM",
+  2  ROUND(MIN(STAFF_SAL),0)"MINIMUM",
+  3  ROUND(SUM(STAFF_SAL),0)"SUM",
+  4  ROUND(AVG(STAFF_SAL),0)"AVERAGE"
+  5  FROM STAFF_MASTER
+  6  GROUP BY DEPT_CODE;
+
+ DEPT_CODE    MAXIMUM    MINIMUM        SUM    AVERAGE
+---------- ---------- ---------- ---------- ----------
+        30      42000      17000      91000      30333
+        20      62000      20000     124000      31000
+        40      18000      18000      18000      18000
+        10      32000      24000      56000      28000

@@ -1,0 +1,47 @@
+
+SQL> SELECT STAFF_NAME,DEPT_NAME,DEPT_CODE
+  2  FROM STAFF_MASTER
+  3  JOIN DEPARTMENT_MASTER
+  4  USING(DEPT_CODE,DEPT_CODE)
+  5  WHERE DEPT_CODE!=10;
+
+STAFF_NAME
+--------------------------------------------------
+DEPT_NAME                                           DEPT_CODE
+-------------------------------------------------- ----------
+Rahul
+Electricals                                                20
+
+Smith
+Electricals                                                20
+
+Anil
+Electricals                                                20
+
+
+STAFF_NAME
+--------------------------------------------------
+DEPT_NAME                                           DEPT_CODE
+-------------------------------------------------- ----------
+Shyam
+Electricals                                                20
+
+Ram
+Electronics                                                30
+
+Arvind
+Electronics                                                30
+
+
+STAFF_NAME
+--------------------------------------------------
+DEPT_NAME                                           DEPT_CODE
+-------------------------------------------------- ----------
+Allen
+Electronics                                                30
+
+Raviraj
+Mechanics                                                  40
+
+
+8 rows selected.

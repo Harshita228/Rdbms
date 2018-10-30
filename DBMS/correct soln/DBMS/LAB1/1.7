@@ -1,0 +1,30 @@
+7.
+	
+SQL> SELECT STAFF_NAME , DESIGN_CODE , DEPT_CODE , STAFF_SAL*12*10 AS SSAL
+  2  FROM STAFF_MASTER
+  3  WHERE DEPT_CODE IN (10,30)
+  4  ORDER BY DEPT_CODE;
+
+STAFF_NAME                                         DESIGN_CODE  DEPT_CODE
+-------------------------------------------------- ----------- ----------
+      SSAL
+----------
+John                                                       106         10
+   3840000
+
+Mohan                                                      102         10
+   2880000
+
+Ram                                                        103         30
+   3840000
+
+
+STAFF_NAME                                         DESIGN_CODE  DEPT_CODE
+-------------------------------------------------- ----------- ----------
+      SSAL
+----------
+Allen                                                      103         30
+   5040000
+
+Arvind                                                     102         30
+   2040000

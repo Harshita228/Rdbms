@@ -1,0 +1,21 @@
+11.
+
+SQL> SELECT CONCAT(RPAD(SUBSTR(STAFF_NAME,1,1),LENGTH(STAFF_NAME)-2,'*'),SUBSTR(
+STAFF_NAME,LENGTH(STAFF_NAME),1)) FROM STAFF_MASTER;
+
+CONCAT(RPAD(SUBSTR(STAFF_NAME,1,1),LENGTH(STAFF_NAME)-2,'*'),SUBSTR(STAFF_NAME,L
+
+--------------------------------------------------------------------------------
+
+A***d
+S**m
+M**n
+A*l
+J*n
+A**n
+S**h
+R****j
+R**l
+Rm
+
+10 rows selected.

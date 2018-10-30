@@ -1,0 +1,11 @@
+17.
+
+SQL> SELECT * FROM USER_TAB_COMMENTS
+  2  WHERE TABLE_NAME='CUSTOMER_TABLE';
+
+TABLE_NAME                     TABLE_TYPE
+------------------------------ -----------
+COMMENTS
+--------------------------------------------------------------------------------
+
+CUSTOMER_TABLE                 TABLE

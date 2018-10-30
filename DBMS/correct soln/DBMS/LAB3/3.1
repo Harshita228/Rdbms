@@ -1,0 +1,36 @@
+1.
+
+SQL> SELECT STAFF_NAME,STAFF_SAL,DEPT_NAME
+  2  FROM STAFF_MASTER,DEPARTMENT_MASTER
+  3  WHERE STAFF_MASTER.STAFF_SAL>20000
+  4  AND STAFF_MASTER.DEPT_CODE=DEPARTMENT_MASTER.DEPT_CODE;
+
+STAFF_NAME                                          STAFF_SAL
+-------------------------------------------------- ----------
+DEPT_NAME
+--------------------------------------------------
+John                                                    32000
+Computer Science
+
+Mohan                                                   24000
+Computer Science
+
+Rahul                                                   22000
+Electricals
+
+
+STAFF_NAME                                          STAFF_SAL
+-------------------------------------------------- ----------
+DEPT_NAME
+--------------------------------------------------
+Smith                                                   62000
+Electricals
+
+Ram                                                     32000
+Electronics
+
+Allen                                                   42000
+Electronics
+
+
+6 rows selected.

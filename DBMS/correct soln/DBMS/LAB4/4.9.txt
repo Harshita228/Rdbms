@@ -1,0 +1,17 @@
+9.
+SQL> ALTER TABLE CUSTOMER_TABLE
+  2  DROP CONSTRAINT CUSTID_PRIM;
+
+Table altered.
+
+SQL> update customer_table
+  2  set salary=15000.50
+  3  where customerid=1002;
+
+1 row updated.
+
+SQL> update customer_table
+  2  set salary=20000.50
+  3  where customerid=1003;
+
+1 row updated.

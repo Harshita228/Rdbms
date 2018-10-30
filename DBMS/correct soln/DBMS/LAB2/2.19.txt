@@ -1,0 +1,9 @@
+19.
+        50                1
+
+SQL> SELECT COUNT(DISTINCT Mgr_code)"NUMBER OF MANAGERS"
+  2  FROM STAFF_MASTER;
+
+NUMBER OF MANAGERS
+------------------
+                 3

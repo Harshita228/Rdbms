@@ -1,0 +1,9 @@
+6.
+
+
+SQL> INSERT INTO CUSTOMER_TABLE
+  2  VALUES(1002,'john','#114 chicago','#114 chicago','m',45,439525);
+INSERT INTO CUSTOMER_TABLE
+*
+ERROR at line 1:
+ORA-00001: unique constraint (TRG1110.CUSTID_PRIM) violated

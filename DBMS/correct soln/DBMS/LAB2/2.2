@@ -1,0 +1,19 @@
+
+SQL> select staff_name,round(months_between(sysdate,hiredate)) months_worked
+  2  from staff_master
+  3  order by months_worked;
+
+STAFF_NAME                                         MONTHS_WORKED
+-------------------------------------------------- -------------
+Rahul                                                        155
+Arvind                                                       165
+Raviraj                                                      166
+Smith                                                        176
+Shyam                                                        176
+Mohan                                                        177
+Ram                                                          177
+Allen                                                        186
+Anil                                                         188
+John                                                         189
+
+10 rows selected.

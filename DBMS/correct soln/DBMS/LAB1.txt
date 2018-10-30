@@ -1,0 +1,362 @@
+1.
+	
+SQL> SELECT STAFF_NAME , STAFF_SAL , DEPT_CODE
+  2  FROM STAFF_MASTER
+  3  WHERE DEPT_CODE BETWEEN 20 AND 40;
+
+STAFF_NAME                                          STAFF_SAL  DEPT_CODE
+-------------------------------------------------- ---------- ----------
+Arvind                                                  17000         30
+Shyam                                                   20000         20
+Anil                                                    20000         20
+Allen                                                   42000         30
+Smith                                                   62000         20
+Raviraj                                                 18000         40
+Rahul                                                   22000         20
+Ram                                                     32000         30
+
+2.
+	
+SQL> SELECT STAFF_NAME AS SNAME , STAFF_DOB AS SDOB , DEPT_CODE AS DCODE
+  2  FROM STAFF_MASTER
+  3  ORDER BY DEPT_CODE;
+
+SNAME                                              SDOB           DCODE
+-------------------------------------------------- --------- ----------
+John                                               22-MAY-76         10
+Mohan                                              23-MAR-80         10
+Rahul                                              16-JAN-78         20
+Anil                                               22-APR-77         20
+Smith                                              19-JUL-73         20
+Shyam                                              18-FEB-80         20
+Ram                                                17-JAN-79         30
+Allen                                              22-JAN-80         30
+Arvind                                             15-JAN-80         30
+Raviraj                                            17-JUN-80         40
+
+3.
+		
+
+SQL> SELECT STUDENT_CODE, SUBJECT1+SUBJECT2+SUBJECT3  FROM STUDENT_MARKS
+  2  ORDER BY STUDENT_CODE;
+
+STUDENT_CODE SUBJECT1+SUBJECT2+SUBJECT3
+------------ --------------------------
+        1001                        178
+        1002                        228
+        1003                        206
+        1004                        219
+        1005                        231
+        1006                        205
+        1007                        195
+        1008                        182
+        1009                        188
+        1010                        204
+        1011                        263
+
+STUDENT_CODE SUBJECT1+SUBJECT2+SUBJECT3
+------------ --------------------------
+        1012                        189
+        1013                        198
+        1014                        212
+        1015                        185
+        1016                        220
+        1017                        165
+        1018                        199
+        1019                        210
+        1020                        165
+        1021                        235
+	
+4.
+	
+SQL> SELECT DESIGN_CODE , DESIGN_NAME
+  2  FROM DESIGNATION_MASTER
+  3  WHERE DESIGN_NAME IN ('Professor','Lecturer');
+
+DESIGN_CODE DESIGN_NAME
+----------- --------------------------------------------------
+        105 Lecturer
+        102 Professor
+
+5.
+
+
+SQL> select staff_code , staff_name , dept_code,extract(year from sysdate)-extra
+ct(year from hiredate)
+  2  from staff_master , dual
+  3  where (extract(year from sysdate)-extract(year from hiredate)) > 18;
+
+no rows selected
+
+
+6.
+	
+SQL> SELECT STAFF_CODE , DESIGN_CODE
+  2  FROM STAFF_MASTER
+  3  WHERE HireDate <'01-JAN-2003';
+
+STAFF_CODE DESIGN_CODE
+---------- -----------
+    100002         102
+    100003         102
+    100004         102
+    100005         106
+    100006         103
+    100007         103
+    100010         103		
+		
+7.
+	
+SQL> SELECT STAFF_NAME , DESIGN_CODE , DEPT_CODE , STAFF_SAL*12*10 AS SSAL
+  2  FROM STAFF_MASTER
+  3  WHERE DEPT_CODE IN (10,30)
+  4  ORDER BY DEPT_CODE;
+
+STAFF_NAME                                         DESIGN_CODE  DEPT_CODE
+-------------------------------------------------- ----------- ----------
+      SSAL
+----------
+John                                                       106         10
+   3840000
+
+Mohan                                                      102         10
+   2880000
+
+Ram                                                        103         30
+   3840000
+
+
+STAFF_NAME                                         DESIGN_CODE  DEPT_CODE
+-------------------------------------------------- ----------- ----------
+      SSAL
+----------
+Allen                                                      103         30
+   5040000
+
+Arvind                                                     102         30
+   2040000
+
+9.
+	
+SQL> SELECT STUDENT_NAME || ',' || DEPT_CODE AS  "STUDENT_INFO"
+  2  FROM STUDENT_MASTER;
+
+STUDENT_INFO
+-------------------------------------------------------------------------------
+
+Amit,10
+Ravi,10
+Ajay,20
+Raj,30
+Arvind,40
+Rahul,50
+Mehul,20
+Dev,10
+Vijay,30
+Rajat,40
+Sunder,50
+
+STUDENT_INFO
+-------------------------------------------------------------------------------
+
+Rajesh,30
+Anil,20
+Sunil,10
+Kapil,40
+Ashok,40
+Ramesh,30
+Amit Raj,50
+Ravi Raj,50
+Amrit,10
+Sumit,20
+
+10.
+	
+SQL> SELECT STAFF_NAME , STAFF_SAL
+  2  FROM STAFF_MASTER
+  3  WHERE STAFF_SAL BETWEEN '12000' AND '25000'
+  4  ORDER BY STAFF_SAL;
+
+STAFF_NAME                                          STAFF_SAL
+-------------------------------------------------- ----------
+Arvind                                                  17000
+Raviraj                                                 18000
+Shyam                                                   20000
+Anil                                                    20000
+Rahul                                                   22000
+Mohan                                                   24000
+
+11.
+	
+SQL> SELECT MGR_CODE , DEPT_CODE
+  2  FROM STAFF_MASTER
+  3  WHERE MGR_CODE IS NOT NULL;
+
+  MGR_CODE  DEPT_CODE
+---------- ----------
+    100006         30
+    100007         20
+    100006         10
+    100006         20
+    100007         10
+    100005         30
+    100005         20
+    100006         40
+    100006         20
+    100007         30
+	
+11.
+	
+SQL> SELECT MGR_CODE , DEPT_CODE
+  2  FROM STAFF_MASTER
+  3  WHERE MGR_CODE IS NULL;
+
+no rows selected
+
+
+12.
+		
+SQL> SELECT STAFF_NAME , DEPT_CODE ,STAFF_DOB
+  2  FROM STAFF_MASTER
+  3  WHERE STAFF_DOB BETWEEN '01-JAN-81' AND '31-MAR-83'
+  4  ORDER BY STAFF_DOB ASC;
+
+no rows selected
+
+12.
+	
+SQL> SELECT STAFF_NAME , DEPT_CODE ,STAFF_DOB
+  2  FROM STAFF_MASTER
+  3  WHERE STAFF_DOB BETWEEN '22-JAN-80' AND '31-MAR-83'
+  4  ORDER BY STAFF_DOB ASC;
+
+STAFF_NAME                                          DEPT_CODE STAFF_DOB
+-------------------------------------------------- ---------- ---------
+Allen                                                      30 22-JAN-80
+Shyam                                                      20 18-FEB-80
+Mohan                                                      10 23-MAR-80
+Raviraj                                                    40 17-JUN-80
+
+13.
+	SELECT MGR_CODE , DEPT_CODE , STAFF_SAL
+	FROM STAFF_MASTER
+	WHERE MGR_CODE IS NOT NULL
+	ORDER BY STAFF_SAL
+	HAVING STAFF_SAL > 20000;
+	
+	no rows selected
+*****************************************************************************************************
+14.
+
+SQL> SELECT BOOK_CODE,BOOK_EXPECTED_RETURN_DATE,BOOK_ACTUAL_RETURN_DATE,
+  2  TO_CHAR(BOOK_ACTUAL_RETURN_DATE,'DAY')DAY
+  3  FROM BOOK_TRANSACTION
+  4  ORDER BY TO_CHAR(BOOK_EXPECTED_RETURN_DATE,'D');
+
+no rows selected
+*******************************************************************************************************
+15.
+
+SQL> SELECT STUDENT_NAME,
+  2  NVL(TO_CHAR(DEPT_CODE),'NO DEPARTMENT') DEPARTMENT
+  3  FROM STUDENT_MASTER;
+
+STUDENT_NAME
+--------------------------------------------------
+DEPARTMENT
+----------------------------------------
+Amit
+10
+
+Ravi
+10
+
+Ajay
+20
+
+
+STUDENT_NAME
+--------------------------------------------------
+DEPARTMENT
+----------------------------------------
+Raj
+30
+
+Arvind
+40
+
+Rahul
+50
+
+
+STUDENT_NAME
+--------------------------------------------------
+DEPARTMENT
+----------------------------------------
+Mehul
+20
+
+Dev
+10
+
+Vijay
+30
+
+
+STUDENT_NAME
+--------------------------------------------------
+DEPARTMENT
+----------------------------------------
+Rajat
+40
+
+Sunder
+50
+
+Rajesh
+30
+
+
+STUDENT_NAME
+--------------------------------------------------
+DEPARTMENT
+----------------------------------------
+Anil
+20
+
+Sunil
+10
+
+Kapil
+40
+
+
+STUDENT_NAME
+--------------------------------------------------
+DEPARTMENT
+----------------------------------------
+Ashok
+40
+
+Ramesh
+30
+
+Amit Raj
+50
+
+
+STUDENT_NAME
+--------------------------------------------------
+DEPARTMENT
+----------------------------------------
+Ravi Raj
+50
+
+Amrit
+10
+
+Sumit
+20
+
+
+21 rows selected.

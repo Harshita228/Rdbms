@@ -1,0 +1,5 @@
+14.
+
+SQL> alter table customer_table set unused column emailid;
+
+Table altered.

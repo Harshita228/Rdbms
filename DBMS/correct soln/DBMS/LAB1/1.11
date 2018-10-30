@@ -1,0 +1,19 @@
+11.
+	
+SQL> SELECT MGR_CODE , DEPT_CODE
+  2  FROM STAFF_MASTER
+  3  WHERE MGR_CODE IS NOT NULL;
+
+  MGR_CODE  DEPT_CODE
+---------- ----------
+    100006         30
+    100007         20
+    100006         10
+    100006         20
+    100007         10
+    100005         30
+    100005         20
+    100006         40
+    100006         20
+    100007         30
+	

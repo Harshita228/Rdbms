@@ -1,0 +1,9 @@
+10.
+
+SQL> truncate table customer_table;              
+
+Table truncated.
+
+SQL> select * from customer_table;
+
+no rows selected

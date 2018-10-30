@@ -1,0 +1,15 @@
+10.
+	
+SQL> SELECT STAFF_NAME , STAFF_SAL
+  2  FROM STAFF_MASTER
+  3  WHERE STAFF_SAL BETWEEN '12000' AND '25000'
+  4  ORDER BY STAFF_SAL;
+
+STAFF_NAME                                          STAFF_SAL
+-------------------------------------------------- ----------
+Arvind                                                  17000
+Raviraj                                                 18000
+Shyam                                                   20000
+Anil                                                    20000
+Rahul                                                   22000
+Mohan                                                   24000

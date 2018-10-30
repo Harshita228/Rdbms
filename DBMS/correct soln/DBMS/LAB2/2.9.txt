@@ -1,0 +1,21 @@
+9.
+
+SQL> SELECT STAFF_NAME , HIREDATE,
+  2  TO_CHAR(HIREDATE,'DAY')DAY
+  3  FROM STAFF_MASTER
+  4  ORDER BY TO_CHAR(HIREDATE-1,'d');
+
+STAFF_NAME                                         HIREDATE  DAY
+-------------------------------------------------- --------- ---------
+Allen                                              23-APR-01 MONDAY
+Smith                                              12-MAR-02 TUESDAY
+Arvind                                             15-JAN-03 WEDNESDAY
+Rahul                                              11-DEC-03 THURSDAY
+Ram                                                17-JAN-02 THURSDAY
+Raviraj                                            11-JAN-03 SATURDAY
+Mohan                                              19-JAN-02 SATURDAY
+Anil                                               11-MAR-01 SUNDAY
+Shyam                                              17-FEB-02 SUNDAY
+John                                               21-JAN-01 SUNDAY
+
+10 rows selected.

@@ -1,0 +1,6 @@
+19.
+
+SQL> SELECT * FROM USER_COL_COMMENTS
+  2  WHERE COLUMN_NAME='PHONE NO';
+
+no rows selected

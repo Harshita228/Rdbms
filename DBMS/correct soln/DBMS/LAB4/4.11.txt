@@ -1,0 +1,5 @@
+11.
+SQL> alter table customer_table
+  2  add(e_mail varchar2(30));
+
+Table altered.

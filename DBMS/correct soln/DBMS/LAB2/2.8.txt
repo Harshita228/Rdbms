@@ -1,0 +1,25 @@
+8.
+
+SQL> SELECT STAFF_NAME,STAFF_SAL,CASE
+  2  WHEN STAFF_SAL>=50000 THEN 'A'
+  3  WHEN STAFF_SAL>=25000 AND STAFF_SAL<50000 THEN 'B'
+  4  WHEN STAFF_SAL>=10000 AND STAFF_SAL<25000 THEN 'C'
+  5  WHEN STAFF_SAL<10000 THEN 'D'
+  6  ELSE 'OTHERS' END "GRADE"
+  7  FROM STAFF_MASTER
+  8  ORDER BY 2 DESC;
+
+STAFF_NAME                                          STAFF_SAL GRADE
+-------------------------------------------------- ---------- ------
+Smith                                                   62000 A
+Allen                                                   42000 B
+John                                                    32000 B
+Ram                                                     32000 B
+Mohan                                                   24000 C
+Rahul                                                   22000 C
+Shyam                                                   20000 C
+Anil                                                    20000 C
+Raviraj                                                 18000 C
+Arvind                                                  17000 C
+
+10 rows selected.

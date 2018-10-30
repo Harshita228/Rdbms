@@ -1,0 +1,78 @@
+3.
+
+SQL> UPDATE EMPLOYEE_TABLE
+  2  SET DEPTNO=(SELECT DEPTNO FROM EMPLOYEE_TABLE WHERE EMPNO=7902)
+  3  WHERE EMPNO=7788;
+
+1 row updated.
+
+SQL> SELECT * FROM EMPLOYEE_TABLE;
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7369 SMITH
+                            800                    20
+
+      7499 ALLEN
+                           1600                    30
+
+      7521 WARD
+                           1250                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7566 JONES
+                           2975                    20
+
+      7654 MARTIN
+                           1250                    30
+
+      7698 BLAKE
+                           2850                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7782 CLARK
+                           2450                    10
+
+      7788 SCOTT
+                           3000                    20
+
+      7839 KING
+                           5000                    10
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7844 TURNER
+                           1500                    30
+
+      7876 ADAMS
+                           1100                    20
+
+      7900 JAMES
+                            950                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7902 FORD
+                           3000                    20
+
+      7934 MILLER
+                           1300                    10
+
+
+14 rows selected.

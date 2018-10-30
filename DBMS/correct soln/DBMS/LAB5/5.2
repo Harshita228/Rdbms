@@ -1,0 +1,298 @@
+
+ 2.
+ 
+ 
+
+SQL> INSERT INTO EMPLOYEE_TABLE(EMPNO,ENAME,SAL,DEPTNO)
+  2  VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO);
+Enter value for empno: 7369
+Enter value for ename: 'SMITH'
+Enter value for sal: 800
+Enter value for deptno: 20
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7369,'SMITH',800,20)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7499
+Enter value for ename: 'ALLEN'
+Enter value for sal: 1600
+Enter value for deptno: 30
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7499,'ALLEN',1600,30)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7521
+Enter value for ename: 'WARD'
+Enter value for sal: 1250
+Enter value for deptno: 30
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7521,'WARD',1250,30)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7566
+Enter value for ename: 'JONES'
+Enter value for sal: 2975
+Enter value for deptno: 20
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7566,'JONES',2975,20)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7654
+Enter value for ename: 'MARTIN'
+Enter value for sal: 1250
+Enter value for deptno: 30
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7654,'MARTIN',1250,30)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7698
+Enter value for ename: 'BLAKE'
+Enter value for sal: 2850
+Enter value for deptno: 30
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7698,'BLAKE',2850,30)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7782
+Enter value for ename: 'CLARK'
+Enter value for sal: 2450
+Enter value for deptno: 10
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7782,'CLARK',2450,10)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7788
+Enter value for ename: 'SCOTT'
+Enter value for sal: 3000
+Enter value for deptno: 20
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7788,'SCOTT',3000,20)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7839
+Enter value for ename: 'KING'
+Enter value for sal: 5000
+Enter value for deptno: 10
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7839,'KING',5000,10)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7844
+Enter value for ename: 'TURNER'
+Enter value for sal: 1500
+Enter value for deptno: 30
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7844,'TURNER',1500,30)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7876
+Enter value for ename: 'ADAMS'
+Enter value for sal: 1100
+Enter value for deptno: 20
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7876,'ADAMS',1100,20)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7900
+Enter value for ename: 'JAMES'
+Enter value for sal: 950
+Enter value for deptno: 30
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7900,'JAMES',950,30)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7902
+Enter value for ename: 'FORD'
+Enter value for sal: 3000
+Enter value for deptno: 20
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7902,'FORD',3000,20)
+
+1 row created.
+
+SQL> /
+Enter value for empno: 7934
+Enter value for ename: 'MILLER'
+Enter value for sal: 1300
+Enter value for deptno: 10
+old   2: VALUES(&EMPNO,&ENAME,&SAL,&DEPTNO)
+new   2: VALUES(7934,'MILLER',1300,10)
+
+1 row created.
+
+SQL> SELECT * FROM EMPLOYEE_TABLE;
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7369 SMITH
+                            800                    20
+
+      7499 ALLEN
+                           1600                    30
+
+      7521 WARD
+                           1250                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7566 JONES
+                           2975                    20
+
+      7654 MARTIN
+                           1250                    30
+
+      7698 BLAKE
+                           2850                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7782 CLARK
+                           2450                    10
+
+      7788 SCOTT
+                           3000                    20
+
+      7839 KING
+                           5000                    10
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7844 TURNER
+                           1500                    30
+
+      7876 ADAMS
+                           1100                    20
+
+      7900 JAMES
+                            950                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7902 FORD
+                           3000                    20
+
+      7934 MILLER
+                           1300                    10
+
+
+14 rows selected.
+**************************************************************************************************************
+
+SQL> UPDATE EMPLOYEE_TABLE
+  2  SET DEPTNO=(SELECT DEPTNO FROM EMPLOYEE_TABLE WHERE EMPNO=7902)
+  3  WHERE EMPNO=7;
+
+0 rows updated.
+
+SQL> UPDATE EMPLOYEE_TABLE
+  2  SET DEPTNO=(SELECT DEPTNO FROM EMPLOYEE_TABLE WHERE EMPNO=7788)
+  3  WHERE EMPNO=7698;
+
+1 row updated.
+
+SQL> SELECT * FROM EMPLOYEE_TABLE;
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7369 SMITH
+                            800                    20
+
+      7499 ALLEN
+                           1600                    30
+
+      7521 WARD
+                           1250                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7566 JONES
+                           2975                    20
+
+      7654 MARTIN
+                           1250                    30
+
+      7698 BLAKE
+                           2850                    20
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7782 CLARK
+                           2450                    10
+
+      7788 SCOTT
+                           3000                    20
+
+      7839 KING
+                           5000                    10
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7844 TURNER
+                           1500                    30
+
+      7876 ADAMS
+                           1100                    20
+
+      7900 JAMES
+                            950                    30
+
+
+     EMPNO ENAME      JOB
+---------- ---------- --------------------------------------------------
+       MGR HIREDATE         SAL       COMM     DEPTNO
+---------- --------- ---------- ---------- ----------
+      7902 FORD
+                           3000                    20
+
+      7934 MILLER
+                           1300                    10
+

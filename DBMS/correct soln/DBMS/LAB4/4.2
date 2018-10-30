@@ -1,0 +1,15 @@
+2
+
+SQL> ALTER TABLE CUSTOMER_TABLE
+  2  MODIFY(CUSTOMERNAME VARCHAR2(30) NOT NULL);
+
+Table altered.
+
+SQL> DESC CUSTOMER_TABLE;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ CUSTOMERID                                         NUMBER(5)
+ CUSTOMERNAME                              NOT NULL VARCHAR2(30)
+ ADDRESS1                                           VARCHAR2(30)
+ ADDRESS2                                           VARCHAR2(30)

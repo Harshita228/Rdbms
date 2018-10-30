@@ -1,0 +1,15 @@
+4.
+SQL> SELECT * FROM CUSTOMER_TABLE;
+
+CUSTOMERID CUSTOMERNAME                   ADDRESS1
+---------- ------------------------------ ------------------------------
+ADDRESS2                       G        AGE    PHONENO
+------------------------------ - ---------- ----------
+      1000 ALLEN                          #115 CHICAGO
+#115 CHICAGO                   M         25    7878776
+
+      1001 GEORGE                         #116 FRANCE 
+#116 FRANCE                    M         25     434524
+
+      1002 BECKER                         #114 NEWYORK
+#114 NEWYORK                   M         45     431525
